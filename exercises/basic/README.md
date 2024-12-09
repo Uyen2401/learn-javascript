@@ -61,3 +61,18 @@
 28. Dùng vòng lặp để tìm giá trị lớn nhất trong một mảng.
 29. Tạo một trò chơi đoán số đơn giản (số ngẫu nhiên từ 1 đến 10).
 30. Dùng `if` và vòng lặp để tìm tất cả các số chia hết cho 3 trong khoảng 1-100.
+
+---
+
+### **Phần 8: Bài tập mở rộng (nâng cao hơn)**
+
+31. Viết chương trình tính giai thừa của một số.
+32. Viết chương trình đảo ngược một chuỗi.
+33. Dùng vòng lặp để đếm số lần xuất hiện của một ký tự trong chuỗi.
+34. Tạo một chương trình kiểm tra số palindrome (ví dụ: 121, 323).
+35. Viết chương trình loại bỏ các số trùng lặp trong một mảng.
+36. Tính tổng các phần tử trong một mảng chỉ chứa số chẵn.
+37. Viết chương trình kiểm tra một năm có phải năm nhuận không.
+38. Tìm số lớn thứ hai trong một mảng số.
+39. Viết chương trình xáo trộn thứ tự các phần tử trong mảng.
+40. Tạo một chương trình nhập vào tên và tuổi, trả về đối tượng chứa thông tin này.
