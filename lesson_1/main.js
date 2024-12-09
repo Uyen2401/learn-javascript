@@ -79,7 +79,7 @@ if (age > 0 && height > 0){
  5. / ->Split
  6. % ->Divide the balance
  7. ++ -> Increment
- 8. --  ->Decrement
+ 8. --  -> Decrement
  */
 
 let weight = 50;
@@ -90,3 +90,30 @@ var BMI = weight / ((height / 100) ** 2);
 BMI--
 
 console.log(BMI);
+
+
+// LESSON 6
+/** Increment/Decrement operators (++/--)
+ Prefix & Postfix
+ */
+
+// Prefix
+ console.log(++age);
+
+//  var output = --age;
+//  console.log('output::::', output);
+
+//  Postfix
+/**
+ Step 1: Copy value "age" ('age copy')
+ Step 2: age = age + 1 => age = 19
+ Step 3: Return 'age copy'
+ */
+var output = age++;
+ console.log('output::::', output);
+ console.log('age:::', age);
+
+
+ output = age++ *2 - --age * 2;
+//  18 * 2 - 18 * 2 
+console.log('output::::', output);
