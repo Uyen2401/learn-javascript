@@ -52,7 +52,7 @@ let Arithmetic = 1 + 2;
 console.log(Arithmetic);
 
 // 2.Assignment
-let firstName = "Nguyen"; // "="
+// let firstName = "Uyen"; // "="
 
 // 3. Comparison
 let age = 18;
@@ -130,3 +130,16 @@ console.log("output::::", output);
 var a = 9;
 a **= 2
 console.log('a:::', a);
+
+
+
+// LESSON 8
+/**
+ String operator
+
+ */
+ var firstName = "Uyen"; 
+ var lastName = 'Nguyen';
+
+ firstName = 'Vanasa_' + firstName
+ console.log(firstName + ' ' + lastName);
