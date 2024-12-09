@@ -27,9 +27,9 @@ var fullName = "Nguyen Thuy Uyen";
 // 2. Console
 console.log(fullName);
 // 3.Confirm
-confirm("Xac nhan ban du tuoi!");
+// confirm("Xac nhan ban du tuoi!");
 // 4.Prompt
-prompt("Xac nhan ban du tuoi!");
+// prompt("Xac nhan ban du tuoi!");
 // 5. Set timeout
 setTimeout(() => {
   console.log("Thong bao ne");
@@ -58,16 +58,15 @@ let firstName = "Nguyen"; // "="
 let age = 18;
 let height = 160;
 
-if( age <  height){
-    console.log('Dung')
+if (age < height) {
+  console.log("Dung");
 }
 
 // 4.Logical
 
-if (age > 0 && height > 0){
-    console.log('age & height lớn hơn 0')
+if (age > 0 && height > 0) {
+  console.log("age & height lớn hơn 0");
 }
-
 
 // LESSON 5
 /**
@@ -84,13 +83,12 @@ if (age > 0 && height > 0){
 
 let weight = 50;
 
-var BMI = weight / ((height / 100) ** 2);
+var BMI = weight / (height / 100) ** 2;
 
 // BMI++
-BMI--
+BMI--;
 
 console.log(BMI);
-
 
 // LESSON 6
 /** Increment/Decrement operators (++/--)
@@ -98,7 +96,7 @@ console.log(BMI);
  */
 
 // Prefix
- console.log(++age);
+console.log(++age);
 
 //  var output = --age;
 //  console.log('output::::', output);
@@ -110,10 +108,25 @@ console.log(BMI);
  Step 3: Return 'age copy'
  */
 var output = age++;
- console.log('output::::', output);
- console.log('age:::', age);
+console.log("output::::", output);
+console.log("age:::", age);
 
+output = age++ * 2 - --age * 2;
+//  18 * 2 - 18 * 2
+console.log("output::::", output);
 
- output = age++ *2 - --age * 2;
-//  18 * 2 - 18 * 2 
-console.log('output::::', output);
+// LESSON 7
+/**
+ Assignment Operators
+ =	x = y	x = y
+ +=	x += y	x = x + y
+ -=	x -= y	x = x - y
+ *=	x *= y	x = x * y
+ /=	x /= y	x = x / y
+ %=	x %= y	x = x % y
+**= x **= y	x = x ** y
+ */
+
+var a = 9;
+a **= 2
+console.log('a:::', a);
