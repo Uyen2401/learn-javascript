@@ -127,9 +127,9 @@ console.log("output::::", output);
 **= x **= y	x = x ** y
  */
 
-var a = 9;
-a **= 2
-console.log('a:::', a);
+var grade = 9;
+grade **= 2
+console.log('grade:::', grade);
 
 
 
@@ -143,3 +143,29 @@ console.log('a:::', a);
 
  firstName = 'Vanasa_' + firstName
  console.log(firstName + ' ' + lastName);
+
+
+//  LESSON 9
+/**
+ Comparison Operators
+
+ Operator || Description
+ ==	|| equal to
+ ===|| equal value and equal type
+ !=	|| not equal
+ !==|| not equal value or not equal type
+ >	|| greater than
+ <	|| less than
+ >=	|| greater than or equal to
+ <=	|| less than or equal to
+ */
+
+
+ let rangeFrom = 1;
+ let rangTo = 2;
+
+ if(rangeFrom >= rangTo){
+    console.log('From value should be less than To value!')
+ } else {
+    console.log('Valid')
+ }
