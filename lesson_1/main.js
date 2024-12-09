@@ -3,6 +3,8 @@
 var fullName = "Nguyen Thuy Uyen";
 // var age = 18; // Khai bao tuoi
 
+
+
 // LESSON 2
 
 /**
@@ -13,6 +15,8 @@ var fullName = "Nguyen Thuy Uyen";
 // alert(fullName);
 // alert(age);
 //
+
+
 
 // LESSON 3
 /**
@@ -38,6 +42,8 @@ setTimeout(() => {
 // setInterval(()=>{
 //     console.log('Log::::' + Math.random())
 // },10)
+
+
 
 // LESSON 4
 /**
@@ -169,3 +175,12 @@ console.log('grade:::', grade);
  } else {
     console.log('Valid')
  }
+
+
+ //  LESSON 10
+ /*
+  Boolean
+  */
+
+  let isSuccess = rangeFrom > rangTo;
+  console.log(isSuccess);
