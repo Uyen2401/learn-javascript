@@ -1,6 +1,9 @@
+// LESSON 1
 // Khai bao bien
 var fullName = "Nguyen Thuy Uyen";
 // var age = 18; // Khai bao tuoi
+
+// LESSON 2
 
 /**
  * Comment in JavaScript
@@ -10,6 +13,8 @@ var fullName = "Nguyen Thuy Uyen";
 // alert(fullName);
 // alert(age);
 //
+
+// LESSON 3
 /**
  * Ham Build-in JavaScript
  * 1. Alert
@@ -30,10 +35,11 @@ setTimeout(() => {
   console.log("Thong bao ne");
 }, 1000);
 // 6.Set interval
-setInterval(()=>{
-    console.log('Log::::' + Math.random())
-},10)
+// setInterval(()=>{
+//     console.log('Log::::' + Math.random())
+// },10)
 
+// LESSON 4
 /**
  1. Arithmetic: Toan tu so hoc
  2. Assignment: Toan tu gan
@@ -52,7 +58,7 @@ let firstName = "Nguyen"; // "="
 let age = 18;
 let height = 160;
 
-if( age < height){
+if( age <  height){
     console.log('Dung')
 }
 
@@ -62,3 +68,25 @@ if (age > 0 && height > 0){
     console.log('age & height lớn hơn 0')
 }
 
+
+// LESSON 5
+/**
+ Arithmetic operators
+ 1. + -> Add
+ 2. - ->Subtraction
+ 3. * ->Multiply
+ 4. ** ->Accumulated
+ 5. / ->Split
+ 6. % ->Divide the balance
+ 7. ++ -> Increment
+ 8. --  ->Decrement
+ */
+
+let weight = 50;
+
+var BMI = weight / ((height / 100) ** 2);
+
+// BMI++
+BMI--
+
+console.log(BMI);
