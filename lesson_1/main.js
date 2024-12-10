@@ -306,3 +306,20 @@ console.log(typeof myObject);
 console.log(typeof id);
 console.log(typeof rank);
 console.log(typeof isNull); // return 'Object' ?????
+
+
+//  LESSON 9
+/**
+ Comparison Operators_ Part 2
+ Strict equality (===)
+ Strict inequality (!==)
+ */
+
+ let myMoney = '0';
+ let mySaving = 0;
+
+ console.log( myMoney == mySaving); // return 'true'
+ console.log( myMoney === mySaving); // return 'false'
+
+ console.log( myMoney != mySaving); // return 'true'
+ console.log( myMoney !== mySaving); // return 'false'
