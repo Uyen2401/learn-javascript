@@ -182,5 +182,28 @@ console.log('grade:::', grade);
   Boolean
   */
 
-  let isSuccess = rangeFrom > rangTo;
+  let isSuccess = rangeFrom < rangTo;
   console.log(isSuccess);
+
+
+// LESSON 11
+/**
+ If - else
+ */
+
+ /**
+  Convert to Boolean -> False
+  0
+  false
+  '' OR ""
+  undefined
+  NaN
+  null
+  */
+
+
+ if (isSuccess){
+    console.log('Valid')
+ } else {
+    console.log('Invalid')
+ }
