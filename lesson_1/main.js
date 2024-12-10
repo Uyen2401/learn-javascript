@@ -206,4 +206,28 @@ console.log('grade:::', grade);
     console.log('Valid')
  } else {
     console.log('Invalid')
- }
+ };
+
+
+// LESSON 12
+/**
+ Logical Operators
+ Operator || Description
+  &&  logical and
+  ||  logical or
+  !	  logical not
+ */
+
+if (rangeFrom > 0 && rangTo > 0 && rangeFrom < rangTo) {
+    console.log('Valid range')
+}
+
+if (rangeFrom < 0 || rangTo > 0 && rangeFrom < rangTo) {
+    console.log('Valid range')
+}
+
+if (!(rangeFrom > rangTo)) {
+    console.log('Valid range')
+} else {
+    console.log('Invalid range')
+}
