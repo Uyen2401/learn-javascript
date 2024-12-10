@@ -308,7 +308,7 @@ console.log(typeof rank);
 console.log(typeof isNull); // return 'Object' ?????
 
 
-//  LESSON 9
+//  LESSON 14
 /**
  Comparison Operators_ Part 2
  Strict equality (===)
@@ -323,3 +323,9 @@ console.log(typeof isNull); // return 'Object' ?????
 
  console.log( myMoney != mySaving); // return 'true'
  console.log( myMoney !== mySaving); // return 'false'
+
+
+//  LESSON 15
+/**
+ 
+ */
