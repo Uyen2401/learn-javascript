@@ -3,8 +3,6 @@
 var fullName = "Nguyen Thuy Uyen";
 // var age = 18; // Khai bao tuoi
 
-
-
 // LESSON 2
 
 /**
@@ -15,8 +13,6 @@ var fullName = "Nguyen Thuy Uyen";
 // alert(fullName);
 // alert(age);
 //
-
-
 
 // LESSON 3
 /**
@@ -42,8 +38,6 @@ setTimeout(() => {
 // setInterval(()=>{
 //     console.log('Log::::' + Math.random())
 // },10)
-
-
 
 // LESSON 4
 /**
@@ -134,22 +128,19 @@ console.log("output::::", output);
  */
 
 var grade = 9;
-grade **= 2
-console.log('grade:::', grade);
-
-
+grade **= 2;
+console.log("grade:::", grade);
 
 // LESSON 8
 /**
  String operator
 
  */
- var firstName = "Uyen"; 
- var lastName = 'Nguyen';
+var firstName = "Uyen";
+var lastName = "Nguyen";
 
- firstName = 'Vanasa_' + firstName
- console.log(firstName + ' ' + lastName);
-
+firstName = "Vanasa_" + firstName;
+console.log(firstName + " " + lastName);
 
 //  LESSON 9
 /**
@@ -166,32 +157,29 @@ console.log('grade:::', grade);
  <=	|| less than or equal to
  */
 
+let rangeFrom = 1;
+let rangTo = 2;
 
- let rangeFrom = 1;
- let rangTo = 2;
+if (rangeFrom >= rangTo) {
+  console.log("From value should be less than To value!");
+} else {
+  console.log("Valid");
+}
 
- if(rangeFrom >= rangTo){
-    console.log('From value should be less than To value!')
- } else {
-    console.log('Valid')
- }
-
-
- //  LESSON 10
- /*
+//  LESSON 10
+/*
   Boolean
   */
 
-  let isSuccess = rangeFrom < rangTo;
-  console.log(isSuccess);
-
+let isSuccess = rangeFrom < rangTo;
+console.log(isSuccess);
 
 // LESSON 11
 /**
  If - else
  */
 
- /**
+/**
   Convert to Boolean -> False
   0
   false
@@ -201,13 +189,11 @@ console.log('grade:::', grade);
   null
   */
 
-
- if (isSuccess){
-    console.log('Valid')
- } else {
-    console.log('Invalid')
- };
-
+if (isSuccess) {
+  console.log("Valid");
+} else {
+  console.log("Invalid");
+}
 
 // LESSON 12
 /**
@@ -219,19 +205,18 @@ console.log('grade:::', grade);
  */
 
 if (rangeFrom > 0 && rangTo > 0 && rangeFrom < rangTo) {
-    console.log('Valid range')
+  console.log("Valid range");
 }
 
-if (rangeFrom < 0 || rangTo > 0 && rangeFrom < rangTo) {
-    console.log('Valid range')
+if (rangeFrom < 0 || (rangTo > 0 && rangeFrom < rangTo)) {
+  console.log("Valid range");
 }
 
 if (!(rangeFrom > rangTo)) {
-    console.log('Valid range')
+  console.log("Valid range");
 } else {
-    console.log('Invalid range')
+  console.log("Invalid range");
 }
-
 
 // LESSON 13
 /**
@@ -254,7 +239,7 @@ let rate = 20.5;
 
 //  String type
 
-let string = 'Uyen Nguyen\'s' // == "Uyen Nguyen's" 
+let string = "Uyen Nguyen's"; // == "Uyen Nguyen's"
 console.log(string);
 
 // Boolean type
@@ -271,35 +256,31 @@ let isNull = null; //nothing
 
 // Symbol
 
-let id = Symbol ('id'); // unique
-let id1 = Symbol ('id') // unique
-console.log(id === id1)
+let id = Symbol("id"); // unique
+let id1 = Symbol("id"); // unique
+console.log(id === id1);
 
 // Function
-let myFunction = function(){
-    console.log('Hi. Xin chao cac ban') 
-}
+let myFunction = function () {
+  console.log("Hi. Xin chao cac ban");
+};
 
 myFunction();
 
 // Object types
 // Object
- let myObject = {
-    name: 'Uyen Nguyen', // key : value ,
-    age: '18',
-    myFunction: function(){
-        //
-    }
- }
+let myObject = {
+  name: "Uyen Nguyen", // key : value ,
+  age: "18",
+  myFunction: function () {
+    //
+  },
+};
 
- console.log('myObject:::', myObject)
+console.log("myObject:::", myObject);
 //  Array
-let myArray = [
-    'Javascript',
-    'PHP',
-    'Ruby'
-];
-console.log('myArray:::', myArray);
+let myArray = ["Javascript", "PHP", "Ruby"];
+console.log("myArray:::", myArray);
 
 // typeof: get the type of any value.
 console.log(typeof myObject);
@@ -307,25 +288,62 @@ console.log(typeof id);
 console.log(typeof rank);
 console.log(typeof isNull); // return 'Object' ?????
 
-
 //  LESSON 14
 /**
  Comparison Operators_ Part 2
- Strict equality (===)
- Strict inequality (!==)
+ Strict equality (===) : equal value and equal type
+ Strict inequality (!==) : 	not equal value or not equal type
  */
 
- let myMoney = '0';
- let mySaving = 0;
+let myMoney = "0";
+let mySaving = 0;
 
- console.log( myMoney == mySaving); // return 'true'
- console.log( myMoney === mySaving); // return 'false'
+console.log(myMoney == mySaving); // return 'true'
+console.log(myMoney === mySaving); // return 'false'
 
- console.log( myMoney != mySaving); // return 'true'
- console.log( myMoney !== mySaving); // return 'false'
-
+console.log(myMoney != mySaving); // return 'true'
+console.log(myMoney !== mySaving); // return 'false'
 
 //  LESSON 15
 /**
- 
+ Comparison and Logical Operators +  Statement-if..else
  */
+
+var a = 1;
+var b = 2;
+
+var result = a < b && a < 0; // Return "false": là kết quả của phép ss 2nd (a < 0 : false)
+console.log("result:::", result);
+
+var logicalAND = "A" && "B" && "C";
+console.log("Logical operator_AND (&&):::", logicalAND); // Return "D"
+
+logicalAND = null && "B" && "C";
+console.log("Logical operator_AND (&&):::", logicalAND); // Return "null"
+
+// if (result) {
+//   console.log("A < B");
+// } else {
+//   console.log("A > B");
+// }
+
+if (!logicalAND) {
+  console.log("DIEU KIEN DUNG");
+} else {
+  console.log("DIEU KIEN SAI");
+}
+
+var logicalOR = "A" || "B" || "C";
+console.log("Logical operator_OR (||):::", logicalOR); // Return "A": Ngược lại với AND chỉ cần đọc value bên trái != 'false' là lấy luôn ko check tiếp
+
+logicalOR = "A" || "B" || undefined || "D";
+console.log("Logical operator_OR (||):::", logicalOR); // Return "A"
+
+logicalOR = 0 || NaN|| undefined || false;
+console.log("Logical operator_OR (||):::", logicalOR); // Return "False"
+
+if (!logicalOR) {
+  console.log("DIEU KIEN DUNG");
+} else {
+  console.log("DIEU KIEN SAI");
+}

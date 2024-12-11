@@ -18,13 +18,13 @@ let x = 10;
 console.log("Gia tri cua x la:::", x);
 
 // 5. Thử khai báo một biến bằng `const` và cố gắng thay đổi giá trị. Quan sát kết quả.
-const fruit = ["mango", "bannana", "peach", "orange"];
-fruit = ["bannana", "peach", "orange"]; //TypeError: Assignment to constant variable.
-console.log("Fruit:::", fruit);
+// const fruit = ["mango", "bannana", "peach", "orange"];
+// fruit = ["bannana", "peach", "orange"]; //TypeError: Assignment to constant variable.
+// console.log("Fruit:::", fruit);
 
-const myMoney = 0;
-myMoney = 100000; //TypeError: Assignment to constant variable.
-console.log("myMoney:::", myMoney);
+// const myMoney = 0;
+// myMoney = 100000; //TypeError: Assignment to constant variable.
+// console.log("myMoney:::", myMoney);
 
 // => Constant cannot be reassigned after it has been initialized.
 
@@ -33,7 +33,7 @@ console.log("myMoney:::", myMoney);
 function compareVariables() {
   const insideBlockCode = true;
   if (insideBlockCode) {
-    var fullName = "Vanasa" + "_" + "Uyen" + "" + "Nguyen";
+    var fullName = "Vanasa" + "_" + "Uyen" + " " + "Nguyen";
     let age = 18;
     const gender = "Female";
 
@@ -43,8 +43,8 @@ function compareVariables() {
   }
 
   console.log("Var outside block code:::", fullName);
-  console.log("let outside block code:::", age); //Error
-  console.log("const outside block code:::", gender); //Error
+//   console.log("let outside block code:::", age); // ReferenceError: age is not defined
+//   console.log("const outside block code:::", gender); //ReferenceError: gender is not defined
 }
 
 compareVariables();
@@ -54,4 +54,16 @@ compareVariables();
 Phần 3: Kiểu dữ liệu
 */
 
+// 7. Tạo một biến kiểu `string` và nối chuỗi với một biến khác.
 
+let temp = 'Hello';
+let intro = 'My name is Uyen';
+let message = 'Have a nice day!';
+
+// Using '+'
+console.log('Introduce:::', temp + ', ' + intro + '. ' + message);
+
+// Using ``
+console.log('Introduce:::', `${temp}, ${intro}. ${message}`);
+
+// 8. Tạo biến kiểu `number` và thực hiện các phép toán cộng, trừ, nhân, chia.
