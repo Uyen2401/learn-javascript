@@ -347,3 +347,29 @@ if (!logicalOR) {
 } else {
   console.log("DIEU KIEN SAI");
 }
+
+//  LESSON 16 : STRING
+/**
+ 1.Tạo chuỗi
+- Cách tạo
+- Nên dùng cách nào ? Lý do ?
+- Kiểm tra data type
+ */
+
+var gender = 'Female'; //Cách 1 ==> Nên dùng cách này
+gender = new String('Female') //Cách 2
+
+console.log(typeof gender); // Data type: Object
+
+
+// 2. Backslash (\) in Javascript
+
+fullName = 'Nguyen Thuy Uyen \'xinh dep\'';
+
+fullName = "Nguyen Thuy Uyen 'xinh dep'";
+
+console.log('fullName:::', fullName);
+
+
+
+
