@@ -316,7 +316,7 @@ var result = a < b && a < 0; // Return "false": là kết quả của phép ss 2
 console.log("result:::", result);
 
 var logicalAND = "A" && "B" && "C";
-console.log("Logical operator_AND (&&):::", logicalAND); // Return "D"
+console.log("Logical operator_AND (&&):::", logicalAND); // Return "C"
 
 logicalAND = null && "B" && "C";
 console.log("Logical operator_AND (&&):::", logicalAND); // Return "null"
