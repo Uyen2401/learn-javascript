@@ -66,36 +66,34 @@ console.log("Introduce:::", `${temp}, ${intro}. ${message}`);
 
 // 8. Tạo biến kiểu `number` và thực hiện các phép toán cộng, trừ, nhân, chia.
 
-var a = 3;
-var b = 2;
-var sum = a + b;
+let a = 3;
+let b = 2;
+let sum = a + b;
 console.log("Tổng là:::", sum); // return: 5
 
-var c = 1;
-var different = a - c;
+let c = 1;
+let different = a - c;
 console.log("Hiệu là :::", different); // return: 2
 
-var multiply = a * b;
+let multiply = a * b;
 console.log("Tích là :::", multiply); // return: 6
 
-var split = b / c;
+let split = b / c;
 console.log("Thương là:::", split); // return: 2
 
 // Kiểm tra kiểu dữ liệu của các biến bằng `typeof`.
 
-typeOfOperator = () => {
-  var number = 18;
-  var string = "Javascript khó như quỷ";
-  var boolean = true;
-  var object = { size: "37", color: "white" };
-  var array = ["Banana", "Apple", "Orange"];
-  var uyen = function () {
+function typeOfOperator () {
+  let number = 18;
+  let string = "Javascript khó như quỷ";
+  let boolean = true;
+  let object = { size: "37", color: "white" };
+  let array = ["Banana", "Apple", "Orange"];
+  let uyen = function () {
     console.log("Đang học Javascript");
   };
-  var undefined = undefined; //undefined
-  var isNull = null;
-  var NaN = NaN;
-  var none; //undefined
+  let isNull = null;
+  let none; //undefined
 
   setTimeout(function () {
     console.log("Chờ xíu 2");
@@ -110,21 +108,19 @@ typeOfOperator = () => {
   console.log(typeof object);
   console.log(typeof array);
   console.log(typeof uyen);
-  console.log(typeof undefined);
   console.log(typeof isNull);
-  console.log(typeof NaN);
   console.log(typeof none);
 };
 
 typeOfOperator();
 
 // Khai báo biến với giá trị `null` và biến khác không được gán giá trị (mặc định là `undefined`).
-var isNull = null;
-var none; //undefined
+let isNull = null;
+let none; //undefined
 
 // Tạo một đối tượng đơn giản với các thuộc tính như `name`, `age`, `isStudent`.
 
-var object = { name: "uyen", age: 18, isStudent: true };
+let object = { name: "uyen", age: 18, isStudent: true };
 console.log(object);
 
 /**
@@ -132,24 +128,24 @@ Phần 3: Phần 4: Toán tử
 */
 
 // 12. Thực hiện các phép toán số học: cộng, trừ, nhân, chia, chia lấy dư.
-var a = 3;
-var b = 2;
-var c = 5;
+let first = 3;
+let second = 2;
+let third = 5;
 
-var sum = a + b;
+let sum2 = first + second;
 console.log("Tổng là:::", sum); // return: 5
 
-var different = a - c;
+let different2 = first - third;
 console.log("Hiệu là :::", different); // return: 2
 
-var multiply = a * b;
+let multiply2 = first * second;
 console.log("Tích là :::", multiply); // return: 6
 
-var split = b / c;
+let split2 = second / third;
 console.log("Thương là:::", split); // return: 2
 
-var divideBalance = (a * b) / 5;
-console.log("Phép chia lấy phần dư:::", divideBalance); // return: 1.2
+let divideBalance = (first * second) % 5;
+console.log("Phép chia lấy phần dư:::", divideBalance); // return: 1
 
 // 13. Kiểm tra kết quả của các phép so sánh (`>`, `<`, `>=`, `<=`, `===`, `!==`)
 
