@@ -194,9 +194,15 @@ function assignmentOperator() {
 assignmentOperator();
 
 // 16. Viết một biểu thức logic kiểm tra một số có nằm trong khoảng từ 10 đến 50.
-function isNumberRange(number) {
-  console.log(number >= 10 && number <=50)
+function isNumberInRange(number) {
+  return number >= 10 && number <=50
 }
 
-isNumberRange(25); // return: true
-isNumberRange(5); // return: false
+if (isNumberInRange(10)){
+  console.log('yes')
+} else {
+  console.log('no')
+}
+
+// console.log(isNumberInRange(25));
+// console.log(isNumberInRange(5));
