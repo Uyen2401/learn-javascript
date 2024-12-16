@@ -195,14 +195,76 @@ assignmentOperator();
 
 // 16. Viết một biểu thức logic kiểm tra một số có nằm trong khoảng từ 10 đến 50.
 function isNumberInRange(number) {
-  return number >= 10 && number <=50
+  if (number >= 10 && number <= 50) {
+    console.log("Yes");
+  } else {
+    console.log("No");
+  }
 }
 
-if (isNumberInRange(10)){
-  console.log('yes')
-} else {
-  console.log('no')
+isNumberInRange(25);
+isNumberInRange(5);
+
+// Phần 5: Câu lệnh điều kiện
+
+// 17. Viết một chương trình kiểm tra xem một số là chẵn hay lẻ bằng `if...else`.
+
+function isEvenOrOdd(number) {
+  if (number % 2 === 0) {
+    console.log("Even");
+  } else {
+    console.log("Odd");
+  }
 }
 
-// console.log(isNumberInRange(25));
-// console.log(isNumberInRange(5));
+isEvenOrOdd(15);
+isEvenOrOdd(20);
+
+// 18. Dựa vào `age`, kiểm tra người dùng là trẻ em, thanh niên hay người lớn.
+function categorizeAge(age) {
+  if (age < 10) {
+    console.log("Kid");
+  } else if (age >= 10 && age <= 18) {
+    console.log("Youth");
+  } else {
+    console.log("Adult");
+  }
+}
+
+categorizeAge(5);
+categorizeAge(16);
+categorizeAge(30);
+
+// 19. Viết một chương trình kiểm tra giá trị của một biến và trả về kết quả khác nhau dùng `switch`.
+//TODO
+
+// 20. Viết chương trình nhận đầu vào là một ngày trong tuần và in ra đó là ngày nào (ví dụ: thứ Hai).
+function getDayOfWeek(day) {
+  if (day === 2) {
+    console.log("Monday");
+  } else if (day === 3) {
+    console.log("Tuesday");
+  } else if (day === 4) {
+    console.log("Wednesday");
+  } else if (day === 5) {
+    console.log("Thursday");
+  } else if (day === 6) {
+    console.log("Friday");
+  } else if (day === 7) {
+    console.log("Saturday");
+  } else if (day === 8) {
+    console.log("Sunday");
+  } else {
+    console.log("Invalid");
+  }
+}
+
+getDayOfWeek(1);
+getDayOfWeek(2);
+getDayOfWeek(3);
+getDayOfWeek(4);
+getDayOfWeek(5);
+getDayOfWeek(6);
+getDayOfWeek(7);
+getDayOfWeek(8);
+getDayOfWeek(9);
