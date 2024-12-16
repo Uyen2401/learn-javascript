@@ -83,7 +83,7 @@ console.log("Thương là:::", split); // return: 2
 
 // Kiểm tra kiểu dữ liệu của các biến bằng `typeof`.
 
-function typeOfOperator () {
+function typeOfOperator() {
   let number = 18;
   let string = "Javascript khó như quỷ";
   let boolean = true;
@@ -95,22 +95,18 @@ function typeOfOperator () {
   let isNull = null;
   let none; //undefined
 
-  setTimeout(function () {
-    console.log("Chờ xíu 2");
-  }, 20000);
-
   console.log(typeof number);
   console.log(typeof string);
   console.log(typeof boolean);
-  setTimeout(function () {
-    console.log("Chờ xíu 1");
-  }, 10000);
+  // setTimeout(function () {
+  //   console.log("Chờ xíu 1");
+  // }, 10000);
   console.log(typeof object);
   console.log(typeof array);
   console.log(typeof uyen);
   console.log(typeof isNull);
   console.log(typeof none);
-};
+}
 
 typeOfOperator();
 
@@ -148,10 +144,59 @@ let divideBalance = (first * second) % 5;
 console.log("Phép chia lấy phần dư:::", divideBalance); // return: 1
 
 // 13. Kiểm tra kết quả của các phép so sánh (`>`, `<`, `>=`, `<=`, `===`, `!==`)
+let i = 1;
+let i1 = 2;
+let i2 = 1;
+let i3 = "1";
+
+console.log(i > i1); // return: false
+console.log(i < i1); // return : true
+console.log(i >= i2); // return: true
+console.log(i <= i1); //return: true
+console.log(i <= i2); // return: true
+console.log(i === i3); // return: false
+console.log(i === i2); // return: true
+console.log(i !== i3); // return: true
 
 // 14. Thực hiện các phép toán logic (`&&`, `||`, `!`) với các giá trị boolean.
+function logicalOperation() {
+  let expession1 = 1;
+  let expession2 = 2;
+  let expession3 = true;
+  let expession4 = false;
 
+  console.log(expession1 > 0 && expession2 > 0); // return: true
+  console.log(expession1 == 2 && expession2 == 2); // return: false
+  console.log(expession1 == 2 || expession2 == 2); // return: true
+  console.log(!expession3); // return: false
+  console.log(!expession4); // return: true
+}
 // 15. Thử nghiệm với toán tử gán (`=`, `+=`, `-=`, `*=`, `/=`).
+function assignmentOperator() {
+  let height = 160;
+
+  height += 1;
+  console.log(height); // return: 161
+
+  height -= 1;
+  console.log(height); // return: 160
+
+  height *= 2;
+  console.log(height); // return: 320
+
+  height /= 2;
+  console.log(height); // return: 160
+
+  height %= 3;
+  console.log(height); // return: 1
+}
+
+assignmentOperator();
 
 // 16. Viết một biểu thức logic kiểm tra một số có nằm trong khoảng từ 10 đến 50.
+function isNumberRange(number) {
+  console.log(number >= 10 && number <=50)
+}
 
+isNumberRange(25); // return: true
+isNumberRange(5); // return: false
