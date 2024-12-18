@@ -356,8 +356,8 @@ if (!logicalOR) {
 - Kiểm tra data type
  */
 
-var gender = 'Female'; //Cách 1 ==> Nên dùng cách này
-gender = new String('Female') //Cách 2
+let gender = 'Female'; //Cách 1 ==> Nên dùng cách này
+gender = String('Female') //Cách 2
 
 console.log(typeof gender); // Data type: Object
 
@@ -371,5 +371,30 @@ fullName = "Nguyen Thuy Uyen 'xinh dep'";
 console.log('fullName:::', fullName);
 
 
+// Template string ES6
+console.log(`Toi la ${fullName} và là ${gender}`);
+
+//  LESSON 17 : STRING (cont)
 
 
+// 1.Length
+let myString = 'String Properties'
+let sln = myString.length; // return: 17
+// console.log(sln);
+
+// 2. Find index : indexOf() Cung cấp vị trí của một giá trị char có trong chuỗi đã cho.
+console.log(myString.indexOf("t")); //return 1
+console.log(myString.lastIndexOf("t")); // return 13
+// 3. Cut string: slice() trích xuất một phần của chuỗi và trả về nó dưới dạng một chuỗi mới mà không sửa đổi chuỗi gốc.
+//e.g., str.slice(beginIndex[, endIndex])
+console.log(myString.slice(7)) // return: Properties
+console.log(myString.slice(0,-11)) // return: String
+
+// 4. Replace: replace() Thay thế một chuỗi nhất định với sự thay thế được chỉ định.
+console.log(myString.replace('Properties', 'Replace'));
+
+// 5. Convert to Upper case: toUpperCase() trả về giá trị chuỗi được chuyển đổi thành chữ hoa (giá trị sẽ được chuyển đổi thành chuỗi nếu không phải là một chuỗi).
+// e.g., str.toUpperCase()
+
+console.log(myString.toUpperCase());
+// TODO
