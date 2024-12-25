@@ -520,6 +520,131 @@ console.log(fruits);
 // 8. concat(): Trả về một đối tượng mảng mới chứa hai hoặc nhiều mảng được hợp nhất.
 const fruits2 = ["Coconut", "Pitaya"];
 
-console.log(fruits2.concat(fruits))
+console.log(fruits2.concat(fruits));
 
 // 9. slice(): Trả về một mảng mới chứa bản sao của một phần của mảng đã cho.
+console.log(fruits2.slice(1));
+
+//  LESSON 19 : CONDITIONAL STATEMENTS
+//A. IF-ELSE Statement
+
+let date = 2;
+
+if (date === 2) {
+  console.log("Hom nay la thu 2");
+} else if (date === 3) {
+  console.log("Hom nay la thu 3");
+} else if (date === 4) {
+  console.log("Hom nay la thu 4");
+} else {
+  console.log("Khong biet");
+}
+
+function greatestNumber(a, b, c) {
+  if (a > b && a > c) {
+    console.log("The greatest number is " + a);
+  } else if (b > a && b > c) {
+    console.log("The greatest number is " + b);
+  } else {
+    console.log("The greatest number is " + c);
+  }
+}
+
+greatestNumber(30, 20, 30.5);
+
+// B. Switch Case
+
+let day_of_week_name = 7;
+
+switch (day_of_week_name) {
+  case 0:
+    console.log("Sunday");
+    break;
+  case 2:
+    console.log("Monday");
+    break;
+  case 3:
+    console.log("Tuesday");
+    break;
+  case 4:
+    console.log("Wednesday");
+    break;
+  case 5:
+    console.log("Thursday");
+    break;
+  case 6:
+    console.log("Friday");
+    break;
+  case 7:
+    console.log("Saturday");
+    break;
+  default:
+    console.log("Unknown Day");
+}
+
+function categorizeBean() {
+  let beanList = [
+    "Soybeans",
+    "Mung Beans",
+    "Black Beans",
+    "Soybeans",
+    "Mung Beans",
+    "Black Beans",
+  ];
+
+  let basketWhite = [];
+  let basketGreen = [];
+  let basketBlack = [];
+
+  for (let index in beanList) {
+    switch (beanList[index]) {
+      case "Soybeans":
+        basketWhite.push(beanList[index]);
+        break;
+      case "Mung Beans":
+        basketGreen.push(beanList[index]);
+        break;
+      case "Black Beans":
+        basketBlack.push(beanList[index]);
+        break;
+      default:
+        console.log("ko biêt");
+    }
+  }
+
+  console.log("Đậu trắng::::", basketWhite);
+  console.log("Đậu xanh::::", basketGreen);
+  console.log("Đậu đen::::", basketBlack);
+}
+
+categorizeBean();
+
+//Cho 1 mảng  n > 10 p.tử
+// Tính tổng các giá trị trong mảng
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+let sum = 0;
+let even = [];
+for (let index in numbers) {
+  sum += numbers[index];
+}
+console.log(sum);
+
+// Lấy các phần tử có giá trị chia hết cho 2
+
+for (let index in numbers) {
+  if (numbers[index] % 2 === 0) {
+    even.push(numbers[index]);
+  }
+}
+console.log(even);
+
+// Lấy các phần tử từ vị trí số 5
+console.log(numbers.slice(5));
+let getNumber = [];
+for (let index in numbers) {
+  if (index >= 5) {
+    getNumber.push(numbers[index]);
+  }
+}
+console.log(getNumber);

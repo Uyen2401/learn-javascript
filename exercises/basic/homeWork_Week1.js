@@ -88,7 +88,7 @@ function typeOfOperator() {
   let string = "Javascript khó như quỷ";
   let boolean = true;
   let object = { size: "37", color: "white" };
-  let array = ["Banana", "Apple", "Orange"];
+  let array = c;
   let uyen = function () {
     console.log("Đang học Javascript");
   };
@@ -236,8 +236,35 @@ categorizeAge(16);
 categorizeAge(30);
 
 // 19. Viết một chương trình kiểm tra giá trị của một biến và trả về kết quả khác nhau dùng `switch`.
+let day_of_week_name = 2;
 
+switch (day_of_week_name) {
+  case 0:
+    console.log("Sunday");
+    break;
+  case 2:
+    console.log("Monday");
+    break;
+  case 3:
+    console.log("Tuesday");
+    break;
+  case 4:
+    console.log("Wednesday");
+    break;
+  case 5:
+    console.log("Thursday");
+    break;
+  case 6:
+    console.log("Friday");
+    break;
+  case 7:
+    console.log("Saturday");
+    break;
+  default:
+    console.log("Khong biet");
+}
 
+//
 // 20. Viết chương trình nhận đầu vào là một ngày trong tuần và in ra đó là ngày nào (ví dụ: thứ Hai).
 function getDayOfWeek(day) {
   if (day === 2) {
@@ -269,15 +296,36 @@ getDayOfWeek(7);
 getDayOfWeek(8);
 getDayOfWeek(9);
 
-
 // Phần 6: Vòng lặp
 
 // 21. Dùng vòng lặp `for` in ra các số từ 1 đến 10.
-
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
+}
 // 22. Sử dụng vòng lặp `while` để in ra các số từ 10 đến 1.
 
 // 23. Tạo một mảng và dùng vòng lặp `for` in ra từng phần tử.
+const array = ["Uyen", 18, "Vanasa", 1999];
+let isNumber = [];
+let isString = [];
+for (let index in array) {
+  console.log(array[index]);
+  if(typeof array[index] == 'number'){
+    isNumber.push(array[index])
+  }else{
+    isString.push(array[index])
+  }
+}
+
+console.log(isNumber);
+console.log(isString);
 
 // 24. Tính tổng các số từ 1 đến 100 bằng vòng lặp.
+let sum1 = 0;
+for (let i = 1; i <= 100; i++) {
+  sum1 += i;
+}
+
+console.log(sum1);
 
 // 25. Dùng `do...while` để yêu cầu người dùng nhập một số lớn hơn 0.
