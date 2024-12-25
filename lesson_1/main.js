@@ -339,7 +339,7 @@ console.log("Logical operator_OR (||):::", logicalOR); // Return "A": Ngược l
 logicalOR = "A" || "B" || undefined || "D";
 console.log("Logical operator_OR (||):::", logicalOR); // Return "A"
 
-logicalOR = 0 || NaN|| undefined || false;
+logicalOR = 0 || NaN || undefined || false;
 console.log("Logical operator_OR (||):::", logicalOR); // Return "False"
 
 if (!logicalOR) {
@@ -356,45 +356,170 @@ if (!logicalOR) {
 - Kiểm tra data type
  */
 
-let gender = 'Female'; //Cách 1 ==> Nên dùng cách này
-gender = String('Female') //Cách 2
+let gender = "Female"; //Cách 1 ==> Nên dùng cách này
+gender = String("Female"); //Cách 2
 
 console.log(typeof gender); // Data type: Object
 
-
 // 2. Backslash (\) in Javascript
-
-fullName = 'Nguyen Thuy Uyen \'xinh dep\'';
 
 fullName = "Nguyen Thuy Uyen 'xinh dep'";
 
-console.log('fullName:::', fullName);
+fullName = "Nguyen Thuy Uyen 'xinh dep'";
 
+console.log("fullName:::", fullName);
 
 // Template string ES6
 console.log(`Toi la ${fullName} và là ${gender}`);
 
 //  LESSON 17 : STRING (cont)
 
-
+// A. String properties
 // 1.Length
-let myString = 'String Properties'
+let myString = "   String Properties   ";
 let sln = myString.length; // return: 17
 // console.log(sln);
+
+// B. String Method:
 
 // 2. Find index : indexOf() Cung cấp vị trí của một giá trị char có trong chuỗi đã cho.
 console.log(myString.indexOf("t")); //return 1
 console.log(myString.lastIndexOf("t")); // return 13
 // 3. Cut string: slice() trích xuất một phần của chuỗi và trả về nó dưới dạng một chuỗi mới mà không sửa đổi chuỗi gốc.
 //e.g., str.slice(beginIndex[, endIndex])
-console.log(myString.slice(7)) // return: Properties
-console.log(myString.slice(0,-11)) // return: String
+console.log(myString.slice(7)); // return: Properties
+console.log(myString.slice(0, -11)); // return: String
 
 // 4. Replace: replace() Thay thế một chuỗi nhất định với sự thay thế được chỉ định.
-console.log(myString.replace('Properties', 'Replace'));
+console.log(myString.replace("Properties", "Replace"));
 
 // 5. Convert to Upper case: toUpperCase() trả về giá trị chuỗi được chuyển đổi thành chữ hoa (giá trị sẽ được chuyển đổi thành chuỗi nếu không phải là một chuỗi).
 // e.g., str.toUpperCase()
 
-console.log(myString.toUpperCase());
-// TODO
+console.log(myString.toUpperCase()); // return: STRING PROPERTIES
+
+// 6. Convert to lower case: toLowerCase() trả về giá trị chuỗi được chuyển đổi thành chữ thường
+// e.g., str.toLowerCase()
+
+console.log(myString.toLowerCase()); // Return: string properties
+
+// 7. Trim: (trim(), trimStart(), trimEnd())
+
+console.log(myString.trim());
+
+// 8. Split:  biến 1 chuỗi thành 1 mảng các chuỗi, bằng cách tách chuỗi theo ký tự dc chỉ định
+// Note: Tìm ra điểm chung để cắt hợp lý
+
+console.log("The quick brown fox".split(" ")); //return: [ 'The', 'quick', 'brown', 'fox' ]
+
+let languages = "Javascript, PHP, Ruby";
+console.log(languages.split(", ")); //return: [ 'Javascript', 'PHP', 'Ruby' ]
+console.log(languages.split(" ")); //return: [ 'Javascript,', 'PHP,', 'Ruby' ]
+console.log(languages.split(",")); //return: [ 'Javascript', ' PHP', ' Ruby' ]
+
+// 9. Get a character by index
+const myName2 = "Vanasa";
+
+console.log(myName2.charAt(0));
+console.log(myName2[0]);
+console.log(typeof myName2.charAt(10)); // return: chuỗi rỗng
+console.log(myName2[10]); // return: undefined
+
+//  LESSON 18 : Array
+// Note: Index đánh tự động bắt đầu từ số 0
+
+// A. Array
+// Method 1:
+const cars = [
+  "Saab",
+  "Volvo",
+  "BMW",
+  "Mercedes",
+  "Tesla",
+  null, // Array có thể chứa tất cả kiểu dữ liệu
+  undefined,
+  function () {
+    console.log("Đang học Javascript");
+  },
+  { size: "37", color: "white" },
+  123,
+];
+
+console.log(cars);
+
+// Method 2: Ko khuyến khích sử dụng vì cách này sẽ tạo ra 1 instant làm mất tg hơn, thực thi chậm hơn
+// const listCars = new Array(
+//   "Saab",
+//   "Volvo",
+//   "BMW",
+//   "Mercedes",
+//   "Tesla",
+//   null, // Array có thể chứa tất cả kiểu dữ liệu
+//   undefined,
+//   function () {
+//     console.log("Đang học Javascript");
+//   },
+//   { size: "37", color: "white" },
+//   123
+// );
+
+// 2. Check data type
+
+console.log(typeof cars); //Return: Object =>> Làm s phân biệt Object và Array ?? >> Dùng Array.isArray()
+console.log(Array.isArray(cars)); // return: true
+console.log(Array.isArray({})); // return: false
+
+// 3. Độ dài mảng
+console.log(cars.length);
+
+//  4. Lấy phần tử theo index
+console.log(cars[1]);
+
+// B. Array Methods
+const fruits = ["Banana", "Apple", "Orange"];
+// 1. To string
+console.log(fruits.toString()); // Chuyển kiểu dữ liệu từ Array sang String. Mặc định khi chuyển sẽ auto thêm dấu ',' để ngăn cách các phần tử
+
+// 2. Join: Kết hợp các phần tử của một mảng dưới dạng một chuỗi.
+console.log(fruits.join(" - "));
+
+// 3. Pop: Loại bỏ và trả về phần tử cuối cùng của một mảng.
+console.log(fruits.pop());
+console.log(fruits); // Return: [ 'Banana', 'Apple' ]
+
+console.log(fruits.pop());
+console.log(fruits); // Return: [ 'Banana']
+
+console.log(fruits.pop());
+console.log(fruits); // Return: []
+
+// 4. Push: Thêm một hoặc nhiều phần tử vào cuối của một mảng.
+console.log(fruits.push("Guava", "Avocado")); // return: 2
+console.log(fruits); // return: ['Guava', 'Avocado' ]
+
+// 5. Shift(): Loại bỏ và trả về phần tử đầu tiên của một mảng (Ngược lại với Pop)
+console.log(fruits.shift());
+console.log(fruits); // Return: [ 'Avocado']
+
+// console.log(fruits.shift())
+// console.log(fruits) // Return: []
+
+// 6. unshift(): thêm một hoặc nhiều phần tử vào đầu mảng đã cho.
+console.log(fruits.unshift("Starfruit", "Mango")); // return: 3
+console.log(fruits); // return: [ 'Starfruit', 'Mango', 'Avocado' ]
+
+// 7. splice(): Thêm / xóa các phần tử đến / từ mảng đã cho
+console.log(fruits.unshift("Banana", "Apple", "Orange"));
+
+fruits.splice(1, 1);
+console.log(fruits);
+
+fruits.splice(1, 2, "Apple");
+console.log(fruits);
+
+// 8. concat(): Trả về một đối tượng mảng mới chứa hai hoặc nhiều mảng được hợp nhất.
+const fruits2 = ["Coconut", "Pitaya"];
+
+console.log(fruits2.concat(fruits))
+
+// 9. slice(): Trả về một mảng mới chứa bản sao của một phần của mảng đã cho.

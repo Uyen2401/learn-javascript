@@ -236,7 +236,7 @@ categorizeAge(16);
 categorizeAge(30);
 
 // 19. Viết một chương trình kiểm tra giá trị của một biến và trả về kết quả khác nhau dùng `switch`.
-//TODO
+
 
 // 20. Viết chương trình nhận đầu vào là một ngày trong tuần và in ra đó là ngày nào (ví dụ: thứ Hai).
 function getDayOfWeek(day) {
@@ -268,3 +268,16 @@ getDayOfWeek(6);
 getDayOfWeek(7);
 getDayOfWeek(8);
 getDayOfWeek(9);
+
+
+// Phần 6: Vòng lặp
+
+// 21. Dùng vòng lặp `for` in ra các số từ 1 đến 10.
+
+// 22. Sử dụng vòng lặp `while` để in ra các số từ 10 đến 1.
+
+// 23. Tạo một mảng và dùng vòng lặp `for` in ra từng phần tử.
+
+// 24. Tính tổng các số từ 1 đến 100 bằng vòng lặp.
+
+// 25. Dùng `do...while` để yêu cầu người dùng nhập một số lớn hơn 0.
