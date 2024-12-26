@@ -310,10 +310,10 @@ let isNumber = [];
 let isString = [];
 for (let index in array) {
   console.log(array[index]);
-  if(typeof array[index] == 'number'){
-    isNumber.push(array[index])
-  }else{
-    isString.push(array[index])
+  if (typeof array[index] == "number") {
+    isNumber.push(array[index]);
+  } else {
+    isString.push(array[index]);
   }
 }
 
@@ -321,8 +321,8 @@ console.log(isNumber);
 console.log(isString);
 
 // 24. Tính tổng các số từ 1 đến 100 bằng vòng lặp.
-// let sum1 = 0;
-for (let i = 1, sum1 = 0; i <= 100; i++) {
+let sum1 = 0;
+for (let i = 1; i <= 100; i++) {
   sum1 += i;
 }
 
