@@ -9,3 +9,13 @@ git push origin <new branch>
 ex: git push origin update-doc
 
 ```
+
+### Stash Changes 
+````
+1.Including Untracked Files
+git stash -u
+
+2.Apply Stashed Changes
+git stash pop
+
+````

@@ -88,7 +88,7 @@ function typeOfOperator() {
   let string = "Javascript khó như quỷ";
   let boolean = true;
   let object = { size: "37", color: "white" };
-  let array = c;
+  let array = ["Banana", "Apple", "Orange"];
   let uyen = function () {
     console.log("Đang học Javascript");
   };
