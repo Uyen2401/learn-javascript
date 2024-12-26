@@ -648,3 +648,71 @@ for (let index in numbers) {
   }
 }
 console.log(getNumber);
+
+//  LESSON 20 : LOOPS
+
+// A. For loops - Lặp với điều kiện đúng
+
+// for (initialization; condition; increment) {
+//   // code
+// }
+
+/*
+Note: 
+- Initialization (Chạy duy nhất 1l): khởi tạo biến được sử dụng trong vòng lặp (Có thể bđ bằng nhiều biến cách nhau bởi dấu ',' OR bỏ qua phần initialization)
+- Condition: Xác định điều kiến cho vòng lặp chạy. Condition trả về true, vòng lặp sẽ bắt đầu check lại đk, nếu nó trả về false, vòng lặp sẽ kết thúc.
+- Increment: Tăng giá trị (i++ tăng lên 1 gt) sau mỗi lần đoạn code trong vòng lặp được thực hiện.
+
+break - Đúng đk thì đến đó sẽ dừng lại
+continue - Đúng đk thì bỏ qua và lặp lại từ đầu 
+*/
+// Example:
+for (let i = 0; i < 10; i++) {
+  console.log("The number is " + i);
+}
+// Initialization: Bỏ qua phần initialization
+let i = 1;
+for (; i < 10; i++) {
+  console.log("The number is:: " + i);
+}
+
+let index = 1;
+let sum1 = 0;
+for (; index <= 100; index++) {
+  sum1 += index;
+}
+
+console.log(sum1);
+
+//Initialization: Có thể bđ bằng nhiều biến cách nhau bởi dấu ','
+for (let i = 0, len = 10, text = ""; i < len; i++) {
+  text += i + " - ";
+  console.log(text);
+}
+
+// Condition: Có thể bỏ qua, tuy nhiên lúc này vòng lặp sẽ không bao giờ kết thúc >> Nếu ko có Condtion thì phải cung cấp break trong vòng lặp
+// for (; ; i++) {
+//   console.log("The number is:: " + i);
+//   break;
+// }
+
+// Increment: cũng có thể được bỏ qua (như khi bạn tăng các giá trị của mình bên trong vòng lặp)
+for (let i = 0, len = 10, text = ""; i < len; ) {
+  text += i + " - ";
+  i++;
+  console.log(text);
+}
+
+//Increment: Vòng lặp ngươc
+for (let i = 100; i > 0; i--) {
+  console.log(i)
+}
+
+// for cho một string
+let str = "Javascript";
+for (i = 0; i < str.length; i++) {
+  console.log(str[i]);
+}
+
+// B. While loops - Lặp với điều kiện đúng
+
