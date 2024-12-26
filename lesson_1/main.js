@@ -705,7 +705,7 @@ for (let i = 0, len = 10, text = ""; i < len; ) {
 
 //Increment: Vòng lặp ngươc
 for (let i = 100; i > 0; i--) {
-  console.log(i)
+  console.log(i);
 }
 
 // for cho một string
@@ -715,4 +715,40 @@ for (i = 0; i < str.length; i++) {
 }
 
 // B. While loops - Lặp với điều kiện đúng
+/**
+ while (condition){
+  //do S.T
+}
+ */
+let i1 = 0;
+while (i1 < 10) {
+  console.log(i1);
+  i1++;
+}
 
+let newLanguages = ["Javascript", "Ruby", "PHP"];
+let i2 = 0;
+while (i2 < newLanguages.length) {
+  console.log(newLanguages[i2]); // Return: Javascript Ruby PHP
+  i2++;
+}
+
+let i3 = 0;
+while (i3++ < 5) {
+  console.log(i3); //return: 1 2 3 4 5
+}
+
+
+// Cách trả về mỗi vài giá trị, giá trị được tích lũy (cộng dần) cho tới khi thõa đk
+// Cách 1:
+let result1 = 0;
+while (result1 < 1) {
+  result1 += 0.1;
+  console.log(result1);
+}
+
+// Cách 2:
+let result2 = 0;
+while ((result2 += 0.1) < 1){
+  console.log(result2);
+}
