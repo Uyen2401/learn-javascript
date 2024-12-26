@@ -303,17 +303,21 @@ for (let i = 1; i <= 10; i++) {
   console.log(i);
 }
 // 22. Sử dụng vòng lặp `while` để in ra các số từ 10 đến 1.
-
+let number = 10;
+while (number >= 1) {
+  console.log(number);
+  number--;
+}
 // 23. Tạo một mảng và dùng vòng lặp `for` in ra từng phần tử.
 const array = ["Uyen", 18, "Vanasa", 1999];
 let isNumber = [];
 let isString = [];
 for (let index in array) {
   console.log(array[index]);
-  if(typeof array[index] == 'number'){
-    isNumber.push(array[index])
-  }else{
-    isString.push(array[index])
+  if (typeof array[index] == "number") {
+    isNumber.push(array[index]);
+  } else {
+    isString.push(array[index]);
   }
 }
 

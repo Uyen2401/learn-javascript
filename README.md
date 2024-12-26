@@ -15,7 +15,10 @@ ex: git push origin update-doc
 1.Including Untracked Files
 git stash -u
 
-2.Apply Stashed Changes
+2.Excludes Untracked Files
+git stash 
+
+3.Apply Stashed Changes
 git stash pop
 
 ````
