@@ -752,3 +752,8 @@ let result2 = 0;
 while ((result2 += 0.1) < 1){
   console.log(result2);
 }
+
+// C. Do While loops
+// D. For In loops
+// E. For Of loops
+
