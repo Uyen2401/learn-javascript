@@ -333,3 +333,11 @@ for (let i = 1; i <= 100; i++) {
 console.log(sum1);
 
 // 25. Dùng `do...while` để yêu cầu người dùng nhập một số lớn hơn 0.
+
+//Phần 7: Kết hợp các kiến thức
+
+// 26. Viết chương trình kiểm tra xem một số có phải là số nguyên tố hay không.
+// 27. Tạo một bảng cửu chương sử dụng vòng lặp lồng nhau.
+// 28. Dùng vòng lặp để tìm giá trị lớn nhất trong một mảng.
+// 29. Tạo một trò chơi đoán số đơn giản (số ngẫu nhiên từ 1 đến 10).
+// 30. Dùng `if` và vòng lặp để tìm tất cả các số chia hết cho 3 trong khoảng 1-100.
