@@ -22,3 +22,9 @@ git stash
 git stash pop
 
 ````
+
+### Pull code
+````
+git pull origin <branch>
+
+````
