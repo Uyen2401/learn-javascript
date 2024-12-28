@@ -754,6 +754,54 @@ while ((result2 += 0.1) < 1){
 }
 
 // C. Do While loops
+i = 0;
+isSuccess = false;
+do {
+i++;
+console.log('Nap thẻ lần ' + i)
+
+//Thất bại
+if (false) {
+isSuccess = true; // điều kiện if (false) luôn sai, nên isSuccess sẽ không bao giờ được gán giá trị true.
+}
+} while (!isSuccess && i < 4)
+
 // D. For In loops
+let myInfo = {
+  name: 'Uyen Nguyen',
+  age: 18,
+}
+
+for (let index in myInfo) {
+console.log(myInfo[index])
+}
+
+languages = ['Js', 'Ruby', 'PHP']
+for (let i in languages) {
+console.log(i) // Return: 0 1 2
+}
+
+languages = ['Js', 'Ruby', 'PHP']
+for (let i in languages) {
+console.log(languages[i]) //Return: Js Ruby PHP
+}
+
+myString = "Javascript";
+for (let i in myString) {
+console.log(myString[i]) // Return: J A V A S C R I P T
+}
+
 // E. For Of loops
+myInfo = {
+  name: 'Uyen Nguyen',
+  age: 18,
+}
+for (let i of Object.values(myInfo)) {
+  console.log(i)
+}
+
+for (let i of Object.keys(myInfo)) {
+  console.log(i)
+}
+
 
