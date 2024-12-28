@@ -738,7 +738,6 @@ while (i3++ < 5) {
   console.log(i3); //return: 1 2 3 4 5
 }
 
-
 // Cách trả về mỗi vài giá trị, giá trị được tích lũy (cộng dần) cho tới khi thõa đk
 // Cách 1:
 let result1 = 0;
@@ -749,7 +748,7 @@ while (result1 < 1) {
 
 // Cách 2:
 let result2 = 0;
-while ((result2 += 0.1) < 1){
+while ((result2 += 0.1) < 1) {
   console.log(result2);
 }
 
@@ -757,51 +756,49 @@ while ((result2 += 0.1) < 1){
 i = 0;
 isSuccess = false;
 do {
-i++;
-console.log('Nap thẻ lần ' + i)
+  i++;
+  console.log("Nap thẻ lần " + i);
 
-//Thất bại
-if (false) {
-isSuccess = true; // điều kiện if (false) luôn sai, nên isSuccess sẽ không bao giờ được gán giá trị true.
-}
-} while (!isSuccess && i < 4)
+  //Thất bại
+  if (false) {
+    isSuccess = true; // điều kiện if (false) luôn sai, nên isSuccess sẽ không bao giờ được gán giá trị true.
+  }
+} while (!isSuccess && i < 4);
 
 // D. For In loops
 let myInfo = {
-  name: 'Uyen Nguyen',
+  name: "Uyen Nguyen",
   age: 18,
-}
+};
 
 for (let index in myInfo) {
-console.log(myInfo[index])
+  console.log(myInfo[index]);
 }
 
-languages = ['Js', 'Ruby', 'PHP']
+languages = ["Js", "Ruby", "PHP"];
 for (let i in languages) {
-console.log(i) // Return: 0 1 2
+  console.log(i); // Return: 0 1 2
 }
 
-languages = ['Js', 'Ruby', 'PHP']
+languages = ["Js", "Ruby", "PHP"];
 for (let i in languages) {
-console.log(languages[i]) //Return: Js Ruby PHP
+  console.log(languages[i]); //Return: Js Ruby PHP
 }
 
 myString = "Javascript";
 for (let i in myString) {
-console.log(myString[i]) // Return: J A V A S C R I P T
+  console.log(myString[i]); // Return: J A V A S C R I P T
 }
 
 // E. For Of loops
 myInfo = {
-  name: 'Uyen Nguyen',
+  name: "Uyen Nguyen",
   age: 18,
-}
+};
 for (let i of Object.values(myInfo)) {
-  console.log(i)
+  console.log(i);
 }
 
 for (let i of Object.keys(myInfo)) {
-  console.log(i)
+  console.log(i);
 }
-
-

@@ -23,7 +23,8 @@ while (i < number.length) {
 console.log("Giá trị lớn nhất:::", max);
 
 // 2. Dùng vòng lặp để đếm số lần xuất hiện của một ký tự trong chuỗi.
-let myString = "In this section we'll look at some of the most commonly-used options.";
+let myString =
+  "In this section we'll look at some of the most commonly-used options.";
 let countCharacter = 0;
 const character = "o";
 for (let i = 0; i < myString.length; i++) {
@@ -32,17 +33,19 @@ for (let i = 0; i < myString.length; i++) {
   }
 }
 
-console.log(`Số lần xuất hiện của một ký tự "${character}" là ${countCharacter}`);
+console.log(
+  `Số lần xuất hiện của một ký tự "${character}" là ${countCharacter}`
+);
 // 3. Tính tổng các phần tử trong một mảng chỉ chứa số chẵn.
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let sum = 0;
-for (let i = 0; i <numbers.length; i++){
-    if(numbers[i] % 2 === 0) {
-        sum += numbers[i]
-    }
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] % 2 === 0) {
+    sum += numbers[i];
+  }
 }
 
-console.log('Tổng các phần tử trong một mảng chỉ chứa số chẵn là :::', sum);
+console.log("Tổng các phần tử trong một mảng chỉ chứa số chẵn là :::", sum);
 
 // 4. Tìm số lớn thứ hai trong một mảng số.
 
