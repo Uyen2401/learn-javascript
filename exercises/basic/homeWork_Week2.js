@@ -55,9 +55,9 @@ let secondLargest = 0;
 
 for (let i = 0; i < number4.length; i++) {
   if (number4[i] > largest) {
-    largest = number4[i];
     secondLargest = largest;
-  } else if(number4[i] > secondLargest){
+    largest = number4[i];
+  } else if(number4[i] > secondLargest && number4[i] < largest){
     secondLargest = number4[i]
   }
 }
