@@ -48,6 +48,21 @@ for (let i = 0; i < numbers.length; i++) {
 console.log("Tổng các phần tử trong một mảng chỉ chứa số chẵn là :::", sum);
 
 // 4. Tìm số lớn thứ hai trong một mảng số.
+const number4 = [1, 3, 5, 7, 10, 25, 5500, 90, 105];
+
+let largest = number4[0];
+let secondLargest = 0;
+
+for (let i = 0; i < number4.length; i++) {
+  if (number4[i] > largest) {
+    largest = number4[i];
+    secondLargest = largest;
+  } else if(number4[i] > secondLargest){
+    secondLargest = number4[i]
+  }
+}
+
+console.log("Số lớn thứ hai là:", secondLargest);
 
 // Exercise 2
 const productsCart = [
