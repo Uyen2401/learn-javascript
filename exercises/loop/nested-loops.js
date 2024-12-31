@@ -29,6 +29,7 @@ for (let i = h; i >= 1; i--) {
   console.log(row);
 }
 
+
 //A.
 h = 10;
 
