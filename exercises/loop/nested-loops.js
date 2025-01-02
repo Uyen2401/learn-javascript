@@ -1,6 +1,6 @@
-for (let index = 1; index <= 10; index++) {
+for (let ind = 1; ind <= 10; ind++) {
   for (let j = 1; j <= 10; j++) {
-    console.log(`${index} x ${j} = ${index * j}`);
+    console.log(`${ind} x ${j} = ${ind * j}`);
   }
   console.log("----------------");
 }
