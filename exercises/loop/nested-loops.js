@@ -1,4 +1,6 @@
 for (let i = 1; i <= 10; i++) {
+  const demo = 10;
+  console.log(demo);
   for (let j = 1; j <= 10; j++) {
     console.log(`${i} x ${j} = ${i * j}`);
   }
@@ -29,7 +31,6 @@ for (let i = h; i >= 1; i--) {
   console.log(row);
 }
 
-
 //A.
 h = 10;
 
@@ -44,7 +45,7 @@ for (let i = h; i >= 1; i--) {
   console.log(row);
 }
 
-console.log('-----------')
+console.log("-----------");
 
 //B.
 for (let i = 1; i <= h; i++) {
@@ -52,7 +53,7 @@ for (let i = 1; i <= h; i++) {
   for (let j = 0; j < h - i; j++) {
     row += " ";
   }
-  for (let j = 0; j< i; j++) {
+  for (let j = 0; j < i; j++) {
     row += "*";
   }
   console.log(row);
