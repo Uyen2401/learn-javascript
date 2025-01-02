@@ -1,4 +1,6 @@
 for (let ind = 1; ind <= 10; ind++) {
+  const test = 20;
+  console.log(test);
   const demo = 10;
   console.log(demo);
   for (let j = 1; j <= 10; j++) {
