@@ -231,30 +231,30 @@ console.log(isFree);
 // 4.find(): Tìm và trả về phần tử đầu tiên trong mảng thỏa mãn điều kiện.
 //Giá trị của phần tử đầu tiên thỏa mãn điều kiện. Nếu không tìm thấy, nó trả về undefined.
 let course = courses.find(function (course, index) {
-  return course.name === 'Ruby'; 
+  return course.name === "Ruby";
 });
 
-console.log('find', course);
+console.log("find", course);
 
-let listNumber = [1,2,3,4,5]
-let result = listNumber.find(num => num > 3) // Tìm số đầu tiên lớn hơn 3 => Return: 4
-console.log('Số đầu tiên lớn hơn 3 là::::', result)
+let listNumber = [1, 2, 3, 4, 5];
+let result = listNumber.find((num) => num > 3); // Tìm số đầu tiên lớn hơn 3 => Return: 4
+console.log("Số đầu tiên lớn hơn 3 là::::", result);
 
 // 5.findIndex(): Nó trả về giá trị chỉ mục của phần tử đầu tiên trong mảng đã cho thỏa mãn điều kiện đã chỉ định.
 // Index của phần tử đầu tiên thỏa mãn điều kiện. Nếu không tìm thấy, nó trả về -1.
 course = courses.findIndex(function (course, index) {
-  return course.name === 'Ruby'; 
+  return course.name === "Ruby";
 });
-console.log('findIndex',course);// Return: 2
+console.log("findIndex", course); // Return: 2
 
-let index = listNumber.findIndex(num => num > 3) // Tìm index của số đầu tiên lớn hơn 3
-console.log('Index của số đầu tiên lớn hơn 3 là:::', index) 
+let index = listNumber.findIndex((num) => num > 3); // Tìm index của số đầu tiên lớn hơn 3
+console.log("Index của số đầu tiên lớn hơn 3 là:::", index);
 
 // 6. filter(): Lọc các phần tử trong mảng dựa trên một điều kiện cụ thể và tạo ra một mảng mới chỉ chứa các phần tử thỏa mãn điều kiện đó.
 // Return: Một mảng mới (có thể rỗng nếu không phần tử nào thỏa mãn điều kiện).
 let listCourses = courses.filter(function (course, index) {
-  return course.name === 'Ruby'; 
+  return course.name === "Ruby";
 });
 console.log(listCourses);
 
-
+// LESSON 23: ARRAY METHODS_P.2
