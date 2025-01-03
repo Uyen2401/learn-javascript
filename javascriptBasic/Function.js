@@ -45,6 +45,14 @@ sayHello(); // return: Hello
  */
 
 // LESSON 22 : Function (cont)
+/**
+1. Tham số ?
+- Định nghĩa
+- Kiểu dữ liệu ?
+- 1 tham số
+- Nhiều tham số
+2. Truyền tham số
+ */
 // Adding Parameters to Functions
 function displaySum(num1, num2) {
     let total = num1 + num2;
@@ -59,5 +67,5 @@ function showFullname(firstName, lastName) {
 }
 
 showFullname("Uyen", "Nguyen"); // Return: Uyen Nguyen
-showFullname("Uyen"); // 0utputs: Uyen undefined
+showFullname("Uyen"); // Return: Uyen undefined
 
