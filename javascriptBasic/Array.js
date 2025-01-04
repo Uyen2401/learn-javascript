@@ -258,3 +258,24 @@ let listCourses = courses.filter(function (course, index) {
 console.log(listCourses);
 
 
+//7. map(): sử dụng để tạo ra một mảng mới bằng cách áp dụng một hàm được chỉ định lên từng phần tử của mảng gốc.
+// Nó không thay đổi mảng ban đầu mà trả về một mảng mới (có số lượng p.tu bằng mảng bđ)
+// array.map(callback(currentValue, index, array), thisArg)
+/**
+ * map sẽ tự hiện vòng lặp, lặp qua từng phần tử trong mảng và mỗi khi lặp qua 1 p.tu sẽ call lại 1 function
+ */
+
+function courseHandler(course, index){
+// console.log('map()::::',course)
+return {
+  id: course.id,
+  name: `Khoa hoc: ${course.name}`,
+  coin: course.coin,
+  coinText:`Gia: ${course.coin}`,
+  index: index
+}
+}
+let newCourses = courses.map(courseHandler);
+console.log(newCourses);
+
+console.log(courses.map(course => course.name))
