@@ -258,3 +258,5 @@ let listCourses = courses.filter(function (course, index) {
 console.log(listCourses);
 
 
+// Please resolve conflict 
+console.log("Conflict here, please remove this line");
