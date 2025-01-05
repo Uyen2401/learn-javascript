@@ -36,3 +36,64 @@ console.log(listAge.some((age) => age > 10));
 
 // B7. Lọc các sinh viên có tuổi lớn hơn hoặc bằng 18.
 console.log(students.filter((student) => student.age >= 18));
+
+
+/* 
+-- Clone Array
+Write a JavaScript function to clone an array.
+Test Data :
+console.log(array_Clone([1, 2, 4, 0]));
+console.log(array_Clone([1, 2, [4, 0]]));
+[1, 2, 4, 0]
+[1, 2, [4, 0]] */
+
+
+/* 
+-- First Elements of Array
+Write a JavaScript function to get the first element of an array. Passing the parameter 'n' will return the first 'n' elements of the array.
+Test Data :
+console.log(first([7, 9, 0, -2]));
+console.log(first([],3));
+console.log(first([7, 9, 0, -2],3));
+console.log(first([7, 9, 0, -2],6));
+console.log(first([7, 9, 0, -2],-3));
+Expected Output :
+7
+[]
+[7, 9, 0]
+[7, 9, 0, -2]
+[]
+ */
+
+
+/* 
+-- Last Elements of Array
+Write a JavaScript function to get the last element of an array. Passing the parameter 'n' will return the last 'n' elements of the array.
+Test Data :
+console.log(last([7, 9, 0, -2]));
+console.log(last([7, 9, 0, -2],3));
+console.log(last([7, 9, 0, -2],6));
+Expected Output :
+-2
+[9, 0, -2]
+[7, 9, 0, -2]
+ */
+
+
+/* 
+-- Join Array Elements
+
+Write a simple JavaScript program to join all elements of the following array into a string.
+Sample array : myColor = ["Red", "Green", "White", "Black"];
+Expected Output :
+"Red,Green,White,Black"
+"Red,Green,White,Black"
+"Red+Green+White+Black" 
+*/
+
+
+/* 
+-- Insert Dashes Between Evens
+
+Write a JavaScript program that accepts a number as input and inserts dashes (-) between each even number. For example if you accept 025468 the output should be 0-254-6-8.
+ */
