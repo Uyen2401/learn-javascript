@@ -265,17 +265,17 @@ console.log(listCourses);
  * map sẽ tự hiện vòng lặp, lặp qua từng phần tử trong mảng và mỗi khi lặp qua 1 p.tu sẽ call lại 1 function
  */
 
-function courseHandler(course, index){
-// console.log('map()::::',course)
-return {
-  id: course.id,
-  name: `Khoa hoc: ${course.name}`,
-  coin: course.coin,
-  coinText:`Gia: ${course.coin}`,
-  index: index
-}
+function courseHandler(course, index) {
+  // console.log('map()::::',course)
+  return {
+    id: course.id,
+    name: `Khoa hoc: ${course.name}`,
+    coin: course.coin,
+    coinText: `Gia: ${course.coin}`,
+    index: index,
+  };
 }
 let newCourses = courses.map(courseHandler);
 console.log(newCourses);
 
-console.log(courses.map(course => course.name))
+console.log(courses.map((course) => course.name));
