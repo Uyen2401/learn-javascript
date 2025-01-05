@@ -47,7 +47,12 @@ console.log(array_Clone([1, 2, [4, 0]]));
 [1, 2, 4, 0]
 [1, 2, [4, 0]] */
 
+function array_Clone(arr) {
+  return arr.map((item) => (Array.isArray(item) ? array_Clone(item) : item));
+}
 
+console.log(array_Clone([1, 2, 4, 0]));
+console.log(array_Clone([1, 2, [4, 0]]));
 /* 
 -- First Elements of Array
 Write a JavaScript function to get the first element of an array. Passing the parameter 'n' will return the first 'n' elements of the array.
@@ -63,11 +68,22 @@ Expected Output :
 [7, 9, 0]
 [7, 9, 0, -2]
 []
- */
+*/
 
+let first = function (arr, n) {
+  if (arr == null) return void 0; // return undefined if true
+  if (n == null) return arr[0];
+  if (n < 0) return [];
+  return arr.slice(0, n);
+};
 
-/* 
--- Last Elements of Array
+console.log(first([7, 9, 0, -2]));
+console.log(first([], 3));
+console.log(first([7, 9, 0, -2], 3));
+console.log(first([7, 9, 0, -2], 6));
+console.log(first([7, 9, 0, -2], -3));
+
+/*-- Last Elements of Array
 Write a JavaScript function to get the last element of an array. Passing the parameter 'n' will return the last 'n' elements of the array.
 Test Data :
 console.log(last([7, 9, 0, -2]));
@@ -78,8 +94,16 @@ Expected Output :
 [9, 0, -2]
 [7, 9, 0, -2]
  */
+let last = function (arr, n) {
+  if (arr == null) return void 0; // return undefined if true
+  if (n == null) return arr[arr.length - 1];
+  if (n < 0) return [];
+  return arr.slice(-n);
+};
 
-
+console.log(last([7, 9, 0, -2]));
+console.log(last([7, 9, 0, -2],3));
+console.log(last([7, 9, 0, -2],6));
 /* 
 -- Join Array Elements
 
@@ -90,6 +114,10 @@ Expected Output :
 "Red,Green,White,Black"
 "Red+Green+White+Black" 
 */
+let myColor = ["Red", "Green", "White", "Black"];
+
+console.log(myColor.join(",")); 
+console.log(myColor.join("+"));
 
 
 /* 
