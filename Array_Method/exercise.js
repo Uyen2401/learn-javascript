@@ -125,6 +125,8 @@ Write a JavaScript program that accepts a number as input and inserts dashes (-)
  */
 const inputNumber = "025468";
 let string = inputNumber.toString();
+
+//Cách 1:
 let result = "";
 for (let i = 0; i < string.length; i++) {
   result += string[i];
@@ -133,3 +135,15 @@ for (let i = 0; i < string.length; i++) {
   }
 }
 console.log(result);
+
+//Cách 2:
+result = [string[0]]; 
+for (let i = 1; i < string.length; i++) { 
+  if (string[i - 1] % 2 === 0 && string[i] % 2 === 0) {
+    result.push('-'); 
+  }
+  result.push(string[i]); 
+}
+
+console.log(result.join(''));
+
