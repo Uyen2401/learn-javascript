@@ -231,32 +231,31 @@ console.log(isFree);
 // 4.find(): Tìm và trả về phần tử đầu tiên trong mảng thỏa mãn điều kiện.
 //Giá trị của phần tử đầu tiên thỏa mãn điều kiện. Nếu không tìm thấy, nó trả về undefined.
 let course = courses.find(function (course, index) {
-  return course.name === 'Ruby'; 
+  return course.name === "Ruby";
 });
 
-console.log('find', course);
+console.log("find", course);
 
-let listNumber = [1,2,3,4,5]
-let result = listNumber.find(num => num > 3) // Tìm số đầu tiên lớn hơn 3 => Return: 4
-console.log('Số đầu tiên lớn hơn 3 là::::', result)
+let listNumber = [1, 2, 3, 4, 5];
+let result = listNumber.find((num) => num > 3); // Tìm số đầu tiên lớn hơn 3 => Return: 4
+console.log("Số đầu tiên lớn hơn 3 là::::", result);
 
 // 5.findIndex(): Nó trả về giá trị chỉ mục của phần tử đầu tiên trong mảng đã cho thỏa mãn điều kiện đã chỉ định.
 // Index của phần tử đầu tiên thỏa mãn điều kiện. Nếu không tìm thấy, nó trả về -1.
 course = courses.findIndex(function (course, index) {
-  return course.name === 'Ruby'; 
+  return course.name === "Ruby";
 });
-console.log('findIndex',course);// Return: 2
+console.log("findIndex", course); // Return: 2
 
-let index = listNumber.findIndex(num => num > 3) // Tìm index của số đầu tiên lớn hơn 3
-console.log('Index của số đầu tiên lớn hơn 3 là:::', index) 
+let index = listNumber.findIndex((num) => num > 3); // Tìm index của số đầu tiên lớn hơn 3
+console.log("Index của số đầu tiên lớn hơn 3 là:::", index);
 
 // 6. filter(): Lọc các phần tử trong mảng dựa trên một điều kiện cụ thể và tạo ra một mảng mới chỉ chứa các phần tử thỏa mãn điều kiện đó.
 // Return: Một mảng mới (có thể rỗng nếu không phần tử nào thỏa mãn điều kiện).
 let listCourses = courses.filter(function (course, index) {
-  return course.name === 'Ruby'; 
+  return course.name === "Ruby";
 });
 console.log(listCourses);
-
 
 //7. map(): sử dụng để tạo ra một mảng mới bằng cách áp dụng một hàm được chỉ định lên từng phần tử của mảng gốc.
 // Nó không thay đổi mảng ban đầu mà trả về một mảng mới (có số lượng p.tu bằng mảng bđ)
@@ -279,3 +278,49 @@ let newCourses = courses.map(courseHandler);
 console.log(newCourses);
 
 console.log(courses.map((course) => course.name));
+
+// 8. reduce(): thực hiện một phép tính tổng hợp (aggregation) trên một mảng, trả về một giá trị duy nhất
+// array.reduce(callback, initialValue);
+// callback: (accumulator(Gtri lưu trữ được tích lũy sau mỗi lần thực thi), currentValue (Gtri htai của p.tu mảng đang được xử lý), currentIndex(optional), originArray(optional))
+// initialValue: Giá trị khởi tạo của accumulator (biến lưu trữ). Nếu không được cung cấp, phần tử đầu tiên của mảng sẽ được sử dụng.
+
+// let i =0;
+// function coinHandler(accumulator, currentValue, currentIndex, originArray) {
+//   i++;
+//   let total = accumulator + currentValue.coin;
+//   // console.log(i)
+//   console.table({
+//     'Lượt chạy: ': i,
+//     'Biến tích trữ: ': accumulator,
+//     'Gía khóa học: ': currentValue.coin,
+//     'Tích trữ được: ': total
+//   })
+//   return total
+// }
+
+// let totalCoin = courses.reduce(coinHandler, 0);
+
+// console.log(totalCoin)
+
+let totalCoin = courses.reduce(function (total, course) {
+  return total + course.coin;
+}, 0);
+
+console.log(totalCoin);
+
+//initialValue: Nếu không được cung cấp, phần tử đầu tiên của mảng sẽ được sử dụng.
+
+listNumber = [100, 200, 220, 200, 400];
+
+let totalNumber = listNumber.reduce(function (total, number) {
+  return total + number;
+});
+console.log(totalNumber);
+
+let max = listNumber.reduce((acc, num) => (num > acc ? num : acc));
+console.log(max);
+
+// Làm phẳng mảng: Flat array
+const nestedArray = [[1, 2], [3, 4], [5, 6]];
+let flatArray = nestedArray.reduce((acc, arr) => acc.concat(arr), []);
+console.log(flatArray);
