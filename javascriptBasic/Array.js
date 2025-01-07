@@ -279,3 +279,49 @@ let newCourses = courses.map(courseHandler);
 console.log(newCourses);
 
 console.log(courses.map((course) => course.name));
+
+// 8. reduce(): thực hiện một phép tính tổng hợp (aggregation) trên một mảng, trả về một giá trị duy nhất
+// array.reduce(callback, initialValue);
+// callback: (accumulator(Gtri lưu trữ được tích lũy sau mỗi lần thực thi), currentValue (Gtri htai của p.tu mảng đang được xử lý), currentIndex(optional), originArray(optional))
+// initialValue: Giá trị khởi tạo của accumulator (biến lưu trữ). Nếu không được cung cấp, phần tử đầu tiên của mảng sẽ được sử dụng.
+
+// let i =0;
+// function coinHandler(accumulator, currentValue, currentIndex, originArray) {
+//   i++;
+//   let total = accumulator + currentValue.coin;
+//   // console.log(i)
+//   console.table({
+//     'Lượt chạy: ': i,
+//     'Biến tích trữ: ': accumulator,
+//     'Gía khóa học: ': currentValue.coin,
+//     'Tích trữ được: ': total
+//   })
+//   return total
+// }
+
+// let totalCoin = courses.reduce(coinHandler, 0);
+
+// console.log(totalCoin)
+
+let totalCoin = courses.reduce(function (total, course) {
+  return total + course.coin;
+}, 0);
+
+console.log(totalCoin);
+
+//initialValue: Nếu không được cung cấp, phần tử đầu tiên của mảng sẽ được sử dụng.
+
+listNumber = [100, 200, 220, 200, 400];
+
+let totalNumber = listNumber.reduce(function (total, number) {
+  return total + number;
+});
+console.log(totalNumber);
+
+let max = listNumber.reduce((acc, num) => (num > acc ? num : acc));
+console.log(max);
+
+// Làm phẳng mảng: Flat array
+const nestedArray = [[1, 2], [3, 4], [5, 6]];
+let flatArray = nestedArray.reduce((acc, arr) => acc.concat(arr), []);
+console.log(flatArray);

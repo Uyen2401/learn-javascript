@@ -37,7 +37,6 @@ console.log(listAge.some((age) => age > 10));
 // B7. Lọc các sinh viên có tuổi lớn hơn hoặc bằng 18.
 console.log(students.filter((student) => student.age >= 18));
 
-
 /* 
 -- Clone Array
 Write a JavaScript function to clone an array.
@@ -102,8 +101,8 @@ let last = function (arr, n) {
 };
 
 console.log(last([7, 9, 0, -2]));
-console.log(last([7, 9, 0, -2],3));
-console.log(last([7, 9, 0, -2],6));
+console.log(last([7, 9, 0, -2], 3));
+console.log(last([7, 9, 0, -2], 6));
 /* 
 -- Join Array Elements
 
@@ -116,12 +115,35 @@ Expected Output :
 */
 let myColor = ["Red", "Green", "White", "Black"];
 
-console.log(myColor.join(",")); 
+console.log(myColor.join(","));
 console.log(myColor.join("+"));
-
 
 /* 
 -- Insert Dashes Between Evens
 
 Write a JavaScript program that accepts a number as input and inserts dashes (-) between each even number. For example if you accept 025468 the output should be 0-254-6-8.
  */
+const inputNumber = "025468";
+let string = inputNumber.toString();
+
+//Cách 1:
+let result = "";
+for (let i = 0; i < string.length; i++) {
+  result += string[i];
+  if (i < string.length - 1 && string[i] % 2 === 0 && string[i + 1] % 2 === 0) {
+    result += "-";
+  }
+}
+console.log(result);
+
+//Cách 2:
+result = [string[0]]; 
+for (let i = 1; i < string.length; i++) { 
+  if (string[i - 1] % 2 === 0 && string[i] % 2 === 0) {
+    result.push('-'); 
+  }
+  result.push(string[i]); 
+}
+
+console.log(result.join(''));
+
