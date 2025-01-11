@@ -24,8 +24,32 @@ const users = [
   { id: 2, name: "Vanasa" },
 ];
 // spread operator (...): { ...obj, key: 'value' } sao chép tất cả các thuộc tính từ đối tượng vào đối tượng mới.
-const updateUses = users.map((user) => ({
-  ...user,
-  isAdmin: false,
-}));
+// const updateUses = users.map((user) => ({
+//   ...user,
+//   isAdmin: false,
+// }));
+// console.log(updateUses);
+
+// const updateUses = users.map((user) => {
+//   if(user.name === 'Uyen'){
+//     return {...user,
+//       isAdmin: true,
+//     }
+//   } else{
+//     return {...user,
+//       isAdmin: false,
+//     }
+//   }
+
+// });
+// console.log(updateUses);
+
+const updateUses = users.map((user) => {
+  return {
+    ...user,
+    isAdmin: user.name === "Uyen" ? true : false,
+  };
+});
+
 console.log(updateUses);
+
