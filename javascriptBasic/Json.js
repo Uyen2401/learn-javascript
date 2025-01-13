@@ -19,15 +19,16 @@ Null	'null'
 
 // Stringify:
 const obj = {
-  name: "Uyen",
-  age: 18,
-  isStudent: true,
-};
-const jsonString = JSON.stringify(obj);
-console.log(jsonString); // Return: '{"name":"Uyen","age":18,"isStudent":true}'
-
-// Parse:
-
-const json = "{'name':'Uyen','age':18,'isStudent':true}";
-const object = JSON.stringify(json);
-console.log(object); // { name: 'Uyen', age: 18, isStudent: true }
+    name: "Uyen",
+    age: 18,
+    isStudent: true,
+  };
+  const jsonString = JSON.stringify(obj);
+  console.log(jsonString); // Return: '{"name":"Uyen","age":18,"isStudent":true}'
+  
+  // Parse:
+  
+  const json = "{'name':'Uyen','age':18,'isStudent':true}";
+  const object = JSON.stringify(json);
+  console.log(object); // { name: 'Uyen', age: 18, isStudent: true }
+  
