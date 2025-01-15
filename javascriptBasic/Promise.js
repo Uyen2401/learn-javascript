@@ -111,36 +111,113 @@ Steps:
 //     console.log(err)
 //   })
 
-//  1. Promise.result(value):Trả về một Promise đã được resolve với (value) được cung cấp.
-const resolvedPromise = Promise.resolve("Success");
-resolvedPromise.then((value) => {
-  console.log(value);
-});
-//  2. Promise.reject(reason): Trả về một Promise đã được reject với (reason) được cung cấp.
-const rejectedPromise = Promise.reject("Error");
-rejectedPromise.catch(function (reason) {
-  console.log(reason);
-});
-//  3. Promise.all(promises): Nhận vào một mảng các Promise và trả về một Promise duy nhất.
-//Chờ tất cả các Promise trong mảng hoàn thành, hoặc bị từ chối nếu có Promise nào bị reject.
+// //  1. Promise.result(value):Trả về một Promise đã được resolve với (value) được cung cấp.
+// const resolvedPromise = Promise.resolve("Success");
+// resolvedPromise.then((value) => {
+//   console.log(value);
+// });
+// //  2. Promise.reject(reason): Trả về một Promise đã được reject với (reason) được cung cấp.
+// const rejectedPromise = Promise.reject("Error");
+// rejectedPromise.catch(function (reason) {
+//   console.log(reason);
+// });
+// //  3. Promise.all(promises): Nhận vào một mảng các Promise và trả về một Promise duy nhất.
+// //Chờ tất cả các Promise trong mảng hoàn thành, hoặc bị từ chối nếu có Promise nào bị reject.
 
-let promise1 = new Promise(function (resolve) {
-  setTimeout(function () {
-    resolve([1]);
-  }, 1000);
-});
+// let promise1 = new Promise(function (resolve) {
+//   setTimeout(function () {
+//     resolve([1]);
+//   }, 1000);
+// });
 
-let promise2 = new Promise(function (resolve) {
-  setTimeout(function () {
-    resolve([2, 3]);
-  }, 2000);
-});
-// const promise2 = Promise.reject('Error!!!')
+// let promise2 = new Promise(function (resolve) {
+//   setTimeout(function () {
+//     resolve([2, 3]);
+//   }, 2000);
+// });
+// // const promise2 = Promise.reject('Error!!!')
 
-Promise.all([promise1, promise2])
-.then(function([result1, result2]){
-    console.log(result1.concat(result2))
-})
-.catch(function(err){
-    console.log(err)
-})
+// Promise.all([promise1, promise2])
+//   .then(function ([result1, result2]) {
+//     console.log(result1.concat(result2));
+//   })
+//   .catch(function (err) {
+//     console.log(err);
+//   });
+
+// LESSON 22: Async/Await
+// Async: Dùng để khai báo một hàm bất đồng bộ, giúp hàm này luôn trả về một Promise.
+// Await: Dùng để tạm dừng việc thực thi bên trong hàm async cho đến khi Promise được (resolved) hoặc bị (rejected).
+// Xử lý lỗi đơn giản hơn Promise: Sử dụng try...catch thay vì .catch().
+
+//Promise
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const success = true;
+      if (success) {
+        resolve("Success!");
+      } else {
+        reject("Fail!");
+      }
+    }, 2000);
+  });
+}
+
+fetchData()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+// Async/Await
+
+async function fetchDataAsync() {
+  try {
+    const result = await fetchData();
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchDataAsync()
+
+//Ex: Tải dữ liệu người dùng và bài viết
+// getUser(userId) trả về thông tin người dùng sau 2 giây.
+// getPosts(userId) trả về danh sách bài viết của người dùng sau 2 giây.
+
+function getUser(userId) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ userId, name: "Vanasa" });
+    }, 2000);
+  });
+}
+
+function getPosts(userId) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([
+        { postId: 1, title: ["Post 1", "Post2"]},
+      ]);
+    }, 2000);
+  });
+}
+
+async function fetchUserAndPosts(userId) {
+  try {
+    const [user, posts] = await Promise.all([getUser(1), getPosts(1)]);
+    // const user = await getUser(userId); 
+    console.log("User:", user);
+
+    // const posts = await getPosts(userId); 
+    console.log("Posts:", posts);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+fetchUserAndPosts(240199);
