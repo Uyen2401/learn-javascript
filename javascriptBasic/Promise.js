@@ -209,7 +209,7 @@ function getPosts(userId) {
 
 async function fetchUserAndPosts(userId) {
   try {
-    const [user, posts] = await Promise.all([getUser(1), getPosts(1)]);
+    const [user, posts] = await Promise.all([getUser(userId), getPosts(userId)]);
     // const user = await getUser(userId); 
     console.log("User:", user);
 
