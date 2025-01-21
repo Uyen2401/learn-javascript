@@ -181,8 +181,8 @@ const printObject = (data) => {
   console.log(JSON.stringify(data, null, 2));
 };
 
-const findAgmt = (agmtNumber) => {
-  return fetch("https://chorus-test.one-line.com/mom/bff/graphql", {
+const findAgmt = async (agmtNumber) => {
+  const res = await fetch("https://chorus-test.one-line.com/mom/bff/graphql", {
     method: "POST",
     headers: {
       accept: "*/*",
@@ -300,7 +300,8 @@ const findAgmt = (agmtNumber) => {
         },
       },
     }),
-  }).then((res) => res.json());
+  });
+  return await res.json();
 };
 
 const getAgreement = async (agmtNumber) => {
@@ -309,9 +310,51 @@ const getAgreement = async (agmtNumber) => {
 };
 
 // Create duplicate agreement: Header only
-const duplicateAgreement = async (agmtNumber) => {
+// const duplicateAgreement = async (agmtNumber) => {
+//   const existingAgmt = await getAgreement(agmtNumber);
+//   delete existingAgmt.agmtItems;
+//   const newAgmtPayload = {
+//     ...existingAgmt,
+//     countries: [],
+//   };
+
+//   for (const country of existingAgmt.countries) {
+//     const countryObj = {
+//       code: country.countryCode,
+//       ports: [],
+//     };
+//     for (const port of existingAgmt.ports) {
+//       if (port.countryCode === country.countryCode) {
+//         const portObj = {
+//           code: port.portCode,
+//           terminalCodes: [],
+//         };
+//         for (const terminal of existingAgmt.terminals) {
+//           if (terminal.portCode === port.portCode) {
+//             portObj.terminalCodes.push(terminal.terminalCode);
+//           }
+//         }
+//         countryObj.ports.push(portObj);
+//       }
+//     }
+//     newAgmtPayload.countries.push(countryObj);
+//   }
+
+//   const newAgmt = {
+//     countries: newAgmtPayload.countries,
+//     type: existingAgmt.agmtType,
+//     vendorCode: existingAgmt.vendor.vendorCode,
+//     contractNumber: existingAgmt.contractNumber,
+//   };
+//   printObject(newAgmt);
+// };
+
+// duplicateAgreement("MOMAGVN25010225");
+
+// Create duplicate agreement: Header +  Body
+
+const duplicateAgreementContainsBody = async (agmtNumber) => {
   const existingAgmt = await getAgreement(agmtNumber);
-  delete existingAgmt.agmtItems;
   const newAgmtPayload = {
     ...existingAgmt,
     countries: [],
@@ -344,10 +387,54 @@ const duplicateAgreement = async (agmtNumber) => {
     type: existingAgmt.agmtType,
     vendorCode: existingAgmt.vendor.vendorCode,
     contractNumber: existingAgmt.contractNumber,
+    agmtItems: existingAgmt.agmtItems?.map((agmtItem) => ({
+      ports: agmtItem.ports.map((port) => ({
+        code: port.portCode,
+        terminalCodes: agmtItem.terminals
+          .filter((terminal) => terminal.portCode === port.portCode)
+          .map((terminal) => terminal.terminalCode),
+      })),
+      costCode: agmtItem.costCode.code,
+      currency: agmtItem.currency,
+      effectiveDate: {
+        effectiveFrom: agmtItem.effectiveDate.effectiveFrom,
+        effectiveTo: agmtItem.effectiveDate.effectiveTo,
+      },
+      rateMethod: agmtItem.rateMethod,
+      finalAmountAdjustment:
+        agmtItem.rateMethod === "Agreement"
+          ? {
+              method: agmtItem.finalAmountAdjustment.method || 'Round',
+              precision: agmtItem.finalAmountAdjustment.precision || 0,
+            }
+          : undefined,
+      base:
+        agmtItem.rateMethod === "Agreement"
+          ? {
+              items: agmtItem.base.items.map((baseItem) => ({
+                formula: {
+                  formula: baseItem.formula.formula,
+                  formulaId: baseItem.formula.formulaId || null,
+                },
+                rangeRateDetail: {
+                  rangeRateItems: baseItem.rangeRateDetail.rangeRateItems.map(
+                    (rangeItem) => ({
+                      from: rangeItem.from,
+                      to: rangeItem.to,
+                      rate: rangeItem.rate,
+                    })
+                  ),
+                  variantCode: baseItem.rangeRateDetail.variantCode,
+                },
+              })),
+            }
+          : undefined,
+    })),
   };
+
   printObject(newAgmt);
 };
 
-duplicateAgreement("MOMAGVN25010225");
+duplicateAgreementContainsBody("MOMAGVN25010216");
 
 //Ex3: read agreement list from json file and create new agreements with existing agreement data
