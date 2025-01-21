@@ -355,35 +355,16 @@ const getAgreement = async (agmtNumber) => {
 
 const duplicateAgreementContainsBody = async (agmtNumber) => {
   const existingAgmt = await getAgreement(agmtNumber);
-  const newAgmtPayload = {
-    ...existingAgmt,
-    countries: [],
-  };
-
-  for (const country of existingAgmt.countries) {
-    const countryObj = {
-      code: country.countryCode,
-      ports: [],
-    };
-    for (const port of existingAgmt.ports) {
-      if (port.countryCode === country.countryCode) {
-        const portObj = {
-          code: port.portCode,
-          terminalCodes: [],
-        };
-        for (const terminal of existingAgmt.terminals) {
-          if (terminal.portCode === port.portCode) {
-            portObj.terminalCodes.push(terminal.terminalCode);
-          }
-        }
-        countryObj.ports.push(portObj);
-      }
-    }
-    newAgmtPayload.countries.push(countryObj);
-  }
-
   const newAgmt = {
-    countries: newAgmtPayload.countries,
+    countries: (existingAgmt.countries || []).map((country) => ({
+        code: country.countryCode,
+        ports: existingAgmt.ports?.map((port) => ({
+          code: port.portCode,
+          terminalCodes: existingAgmt.terminals
+            .filter((terminal) => terminal.portCode === port.portCode)
+            .map((terminal) => terminal.terminalCode),
+        })),
+    })),
     type: existingAgmt.agmtType,
     vendorCode: existingAgmt.vendor.vendorCode,
     contractNumber: existingAgmt.contractNumber,
@@ -404,7 +385,7 @@ const duplicateAgreementContainsBody = async (agmtNumber) => {
       finalAmountAdjustment:
         agmtItem.rateMethod === "Agreement"
           ? {
-              method: agmtItem.finalAmountAdjustment.method || 'Round',
+              method: agmtItem.finalAmountAdjustment.method || "Round",
               precision: agmtItem.finalAmountAdjustment.precision || 0,
             }
           : undefined,
